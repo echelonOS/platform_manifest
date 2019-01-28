@@ -2,11 +2,19 @@
 <manifest>
 
   <remote  name="aosp"
-           fetch=".."
+           fetch="https://android.googlesource.com/"
            review="https://android-review.googlesource.com/" />
   <default revision="refs/tags/android-9.0.0_r30"
            remote="aosp"
            sync-j="4" />
+
+  <remote name="echelon"
+           fetch="https://github.com/echelonOS"
+           revision="pie" />
+
+  <remote name="los"
+           fetch="https://github.com/LineageOS"
+           revision="lineage-16.0" />
 
   <project path="build/make" name="platform/build" groups="pdk" >
     <copyfile src="core/root.mk" dest="Makefile" />
@@ -709,5 +717,10 @@
   <project path="tools/tradefederation/contrib" name="platform/tools/tradefederation/contrib" groups="pdk,tradefed" />
 
   <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
+
+  <!-- Add Lineage & echelon repos -->
+  <include name="remove.xml" />
+  <include name="los.xml" />
+  <include name="echelon.xml" />
 
 </manifest>

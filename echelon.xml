@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+ <!-- General -->
+  <project path="build/make" name="platform_build" remote="echelon" >
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+
+  <project path="build/soong" name="platform_build_soong" remote="echelon" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+
+  <project path="bionic" name="platform_bionic" remote="echelon" />
+  <project path="bootable/recovery" name="platform_bootable_recovery" remote="echelon" />
+  <project path="build/kati" name="platform_build_kati" remote="echelon" />
+
+  <!-- Frameworks -->
+  <project path="frameworks/av" name="platform_frameworks_av" remote="echelon" />
+  <project path="frameworks/base" name="platform_frameworks_base" remote="echelon" />
+  <project path="frameworks/compile/mclinker" name="platform_frameworks_compile_mclinker" remote="echelon" />
+  <project path="frameworks/opt/net/wifi" name="platform_frameworks_opt_net_wifi" remote="echelon" />
+
+  <!-- Hardware -->
+  <project path="hardware/interfaces" name="platform_hardware_interfaces" remote="echelon" />
+  <project path="hardware/libhardware" name="platform_hardware_libhardware" remote="echelon" />
+  <project path="hardware/libhardware_legacy" name="platform_hardware_libhardware_legacy" remote="echelon" />
+  <project path="hardware/echelon/interfaces" name="platform_hardware_echelon_interfaces" remote="echelon" />
+
+  <!-- Packages -->
+  <project path="packages/apps/Settings" name="platform_packages_apps_Settings" remote="echelon" />
+  <project path="packages/providers/MediaProvider" name="platform_packages_providers_MediaProvider" remote="echelon" />
+
+  <!-- Prebuilts -->
+  <project path="prebuilts/build-tools" name="platform_prebuilts_build-tools" remote="echelon" />
+
+  <!-- System -->
+  <project path="system/core" name="platform_system_core" remote="echelon" />
+
+  <!-- Vendor -->
+  <project path="vendor/echelon" name="platform_vendor_echelon" remote="echelon" />
+  <project path="vendor/qcom/opensource/cryptfs_hw" name="platform_vendor_qcom_opensource_cryptfs_hw" remote="echelon" />
+
+  <!-- Sepolicy -->
+  <project path="system/sepolicy" name="platform_system_sepolicy" remote="echelon" />
+  <project path="device/qcom/sepolicy" name="device_qcom_sepolicy" remote="echelon" />
+  <project path="device/echelon/sepolicy" name="device_echelon_sepolicy" remote="echelon" />
+
+  <!-- External -->
+  <project path="external/perfetto" name="platform_external_perfetto" remote="echelon" />
+  <project path="external/selinux" name="platform_external_selinux" remote="echelon" />
+
+</manifest>
